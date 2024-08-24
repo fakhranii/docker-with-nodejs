@@ -18,8 +18,6 @@
 - **To copy a file content we'll use the keyword `COPY source dest` .. the source is the place we'll take the copy from and the dest is the place we'll past the copy in.**
 - **To run a command inside `Dockerfile` ➡ `RUN command` and replace the command keyword with the command you wanna run.**
 - **`EXPOSE` Define the network ports that this container will listen on at runtime .. for example `EXPOSE 3000` , its just for documentation ..**
-- **.**
-- **.**
 
 ---
 
@@ -131,7 +129,7 @@
 
 - **`docker load -i <file-name.tar>`: Loads an image from a tar archive.**
 
-#### _Dockerfile Commands_
+### _Dockerfile Commands_
 
 - **First to build an image of Dockerfile ➡ `docker build .` it works in case if i'm in the folder which include the Dokerfile.**
 
