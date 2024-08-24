@@ -23,7 +23,7 @@
 
 ---
 
-## _How to Manage The `Dockerfile` Via Terminal Commands_
+## _How to Deal With `Docker` Via Terminal Commands_
 
 - **`docker version`: Displays the Docker version installed.**
 
