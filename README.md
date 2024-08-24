@@ -131,6 +131,56 @@
 
 - **`docker load -i <file-name.tar>`: Loads an image from a tar archive.**
 
+#### _Dockerfile Commands_
+
+- **First to build an image of Dockerfile ➡ `docker build .` it works in case if i'm in the folder which include the Dokerfile.**
+
+- **To name the Docker image to separate the iamges with names ➡ `docker build -t imageName .` .**
+
+- **To see list of all images in your device ➡ `docker image ls`.**
+
+- **To run the a container and name it, from `Docker Image` that we have ➡ `docker run --name containerName -p  forward port:internal port  imageName`.**
+
+- **To see list of all running containers in your device ➡ `docker ps`.**
+
+- **To stop container ➡ `docker stop containerName`.**
+
+- **To remove a container ➡ `docker rm containerName -f`.**
+
+- **`FROM <image>`: Specifies the base image for the Docker image.**
+
+- **`LABEL <key>=<value>`: Adds metadata to the image in the form of key-value pairs.**
+
+- **`ENV <key>=<value>`: Sets environment variables within the image.**
+
+- **`RUN <command>`: Executes a command during the image build process, typically used for installing packages.**
+
+- **`COPY <src> <dest>`: Copies files or directories from the host machine into the image.**
+
+- **`ADD <src> <dest>`: Similar to COPY, but with additional features like auto-extracting compressed files.**
+
+- **`WORKDIR <path>`: Sets the working directory for subsequent instructions in the Dockerfile.**
+
+- **`CMD ["executable", "param1", "param2"]`: Specifies the default command to run when a container is started.**
+
+- **`ENTRYPOINT ["executable", "param1", "param2"]`: Configures a container to run as an executable.**
+
+- **`EXPOSE <port>`: Informs Docker that the container listens on the specified network ports at runtime.**
+
+- **`VOLUME ["/data"]`: Creates a mount point with the specified path and marks it as holding externally mounted volumes or bind mounts.**
+
+- **`USER <username or UID>`: Sets the user to use when running the image’s CMD or ENTRYPOINT.**
+
+- **`ARG <key>[=<default value>]`: Defines a variable that users can pass at build-time to the builder with the docker build command.**
+
+- **`ONBUILD <command>`: Adds a trigger instruction to be executed when the image is used as a base for another build.**
+
+- **`HEALTHCHECK <options> CMD <command>`: Defines a command that runs to check that the container is healthy.**
+
+- **`SHELL ["executable", "param1", "param2"]`: Allows the default shell used for the shell form of commands to be overridden.**
+
+---
+
 ## _Difference Between Images & Containers_
 
 ### _Docker Images_
