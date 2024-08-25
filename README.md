@@ -39,6 +39,8 @@
 
 - **`docker run <image>`: Runs a command in a new container.**
 
+- **`docker run --name containerName -v fullPathOfTheMainFile:/folderNameInDockerfile -d -p 4000:4000 node-docker-dev`: This is an instance of create a hot reload container, for example ➡ `docker run --name express-container -v d:\programming\projects\local-projects\nodejs-docker-app:/app -d -p 4000:4000 node-docker-dev.`.**
+
 - **`docker run -d <image>`: Runs a container in detached mode (in the background).**
 
 - **`docker run -it <image>`: Runs a container interactively with a terminal.**
@@ -59,7 +61,7 @@
 
 - **`docker rm <container>`: Removes a container.**
 
-- **`docker rm <container> -f`:Forces Remove a container .**
+- **`docker rm <container> -f`: Forces Remove a container .**
 
 - **`docker exec -it <container> <command>`: Runs a command in a running container (interactive).**
 
@@ -155,7 +157,7 @@
 
 - **`COPY <src> <dest>`: Copies files or directories from the host machine into the image.**
 
-- **`ADD <src> <dest>`: Similar to COPY, but with additional features like auto-extracting compressed files.**
+- **`ADD <src> <dest>`: Similar to `COPY`, but with additional features like auto-extracting compressed files.**
 
 - **`WORKDIR <path>`: Sets the working directory for subsequent instructions in the Dockerfile.**
 
