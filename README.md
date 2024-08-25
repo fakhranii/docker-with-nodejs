@@ -39,7 +39,7 @@
 
 - **`docker run <image>`: Runs a command in a new container.**
 
-- **`docker run --name containerName -v fullPathOfTheMainFile:/folderNameInDockerfile -d -p 4000:4000 node-docker-dev`: This is an instance of create a hot reload container, for example ➡ `docker run --name express-container -v d:\programming\projects\local-projects\nodejs-docker-app:/app -d -p 4000:4000 node-docker-dev.`.**
+- **`docker run --name containerName -v fullPathOfTheMainFile:/folderNameInDockerfile -d -p 4000:4000 node-docker-dev`: This is an instance of create a hot reload container, for example ➡ `docker run --name express-container -v d:\programming\projects\local-projects\nodejs-docker-app:/app -d -p 4000:4000 node-docker-dev.`, And remember to set `start:dev` script in `package.json` to ➡ `nodemon --legacy-watch src/index.ts`**
 
 - **`docker run -d <image>`: Runs a container in detached mode (in the background).**
 
