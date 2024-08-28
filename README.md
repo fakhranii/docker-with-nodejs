@@ -1,5 +1,18 @@
 # ⭐ This Repo Is About Mastering Docker ⭐
 
+## Table of Contents
+
+1. [Start With Docker](#start-with-docker)
+2. [How To Write Instructions In Dockerfile](#how-to-write-instructions-in-dockerfile)
+3. [How to Deal With Docker Via Terminal Commands](#how-to-deal-with-docker-via-terminal-commands)
+4. [Dockerfile Commands](#dockerfile-commands)
+5. [Docker Compose](#docker-compose)
+   - [Common Docker Compose Commands](#common-docker-compose-commands)
+6. [Difference Between Images & Containers](#difference-between-images--containers)
+   - [Docker Images](#docker-images)
+   - [Docker Containers](#docker-containers)
+   - [Key Differences](#key-differences)
+
 ## _Start With Docker_
 
 - **The first step to start with docker is create file named `Dockerfile`.**
@@ -39,7 +52,11 @@
 
 - **`docker run <image>`: Runs a command in a new container.**
 
-- **`docker run --name containerName -v fullPathOfTheMainFile:/folderNameInDockerfile -d -p 4000:4000 node-docker-dev`: This is an instance of create a hot reload container, for example ➡ `docker run --name express-container -v d:\programming\projects\local-projects\nodejs-docker-app:/app -d -p 4000:4000 node-docker-dev.`, And remember to set `start:dev` script in `package.json` to ➡ `nodemon --legacy-watch src/index.ts`**
+- **`docker run --name express-container -v d:\programming\projects\local-projects\nodejs-docker-app/src:/app/src:ro -d -p 4000:4000 node-docker-dev`: Create a container that listen to changes at `src` folder and make hot reload at the container to reload any change happened at `src` folder.**
+
+- **`docker run --name containerName -v fullPathOfTheMainFile Or %cd%:/folderNameInDockerfile -d -p 4000:4000 node-docker-dev`: This is an instance of create a hot reload container, for example ➡ `docker run --name express-container -v d:\programming\projects\local-projects\nodejs-docker-app:/app:ro -d -p 4000:4000 node-docker-dev.`, And remember to set `start:dev` script in `package.json` to ➡ `nodemon --legacy-watch src/index.ts` and we put this option `:ro` to make the container `read-only`**
+
+- **`docker run --name dockerName -v  fullPathOfTheMainFile Or %cd%:/folderNameInDockerfile -v specifyFolderOrFileIdidnotWannaChangeAnythingAtIt(/app/node_modules) -d -p 4000:4000 node-docker-dev`: Creates a new container with anonymous volume, That's mean it'll keep the `docker container` without any change, And if there's changes at local machine won't influnce at the `docker container`.**
 
 - **`docker run -d <image>`: Runs a container in detached mode (in the background).**
 
@@ -178,6 +195,23 @@
 - **`HEALTHCHECK <options> CMD <command>`: Defines a command that runs to check that the container is healthy.**
 
 - **`SHELL ["executable", "param1", "param2"]`: Allows the default shell used for the shell form of commands to be overridden.**
+
+---
+
+- ## _Docker Compose_
+- **The first step to use `Docker-Compose` is create file called `docker-compose.yml`.**
+
+### _Common Docker Compose Commands_
+
+- **`docker compose up`: Build, (re)create, start, and attach to containers for a service.**
+- **`docker compose down`: Stop and remove containers, networks, images, and volumes.**
+- **`docker compose build`: Build or rebuild services.**
+- **`docker compose stop`: Stop services.**
+- **`docker compose start`: Start services.**
+- **`docker compose restart`: Restart services.**
+- **`docker compose logs`: View output from containers.**
+- **`docker compose ps`: List containers.**
+- **`docker compose exec <service_name> <command>`: Execute a command in a running container.**
 
 ---
 
