@@ -13,6 +13,8 @@
    - [Docker Containers](#docker-containers)
    - [Key Differences](#key-differences)
 
+---
+
 ## _Start With Docker_
 
 - **The first step to start with docker is create file named `Dockerfile`.**
@@ -199,7 +201,18 @@
 ---
 
 - ## _Docker Compose_
+
 - **The first step to use `Docker-Compose` is create file called `docker-compose.yml`.**
+
+- **If you wanna run docker in different enviroments, You should run docker-compose file for each enviroments.**
+
+- **When i had different `docker-compose` files and i wanna run specific file : `docker-compose -f dockerComposeFileName up`.**
+
+- **In case if we had many different `docker-compose` files like `dev | pord | stag`, we create a file called `docker-compose.yml` and write all common structure between files i it, then in those other files we write only what related with each of those specific files.**
+
+- **Ensure you don't forget to add this line `docker-compose*` in `.dockerignore` to avoid all `docker-compose` files to be included in the containers that we gonna create.**
+
+- **When i had different `docker-compose` files and `mainComposeFile` like `docker-compose.yml` and i wanna run specific file and the main docker-compose : `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up`.**
 
 ### _Common Docker Compose Commands_
 

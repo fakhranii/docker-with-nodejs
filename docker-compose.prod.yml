@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  express-docker-app:
+    build: # we should write the path of DockerFile, Also i can only write . and docker compose is smart enough to search and find File
+      context: . # specify where you gonna build from
+      target: production
+    environment: # here i write env vars as key & value
+      - NODE_ENV=production
+    command: npm run start # override the run command in Dockerfile

@@ -1,12 +1,16 @@
-#! This is the main docker-compose file, that others files extends the common docker structure from it
 version: "3"
 
 # containers that i wanna use
 services:
   express-docker-app:
     container_name: express-docker-container
-    # build: . # we should write the path of DockerFile, Also i can only write . and docker compose is smart enough to search and find File
+    build: . # we should write the path of DockerFile, But docker compose is smart enough to search and find File
+    volumes:
+      - ./src:/app/src:ro
     ports:
       - "4000:4000" # hostPort:containerPort
+    # environment: # here i write env vars as key & value
+    # - name=value
+
     env_file: # here i can use .env file and reach all vars inside it
       - ./.env
