@@ -10,3 +10,10 @@ services:
       - "4000:4000" # hostPort:containerPort
     env_file: # here i can use .env file and reach all vars inside it
       - ./.env
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
