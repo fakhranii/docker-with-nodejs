@@ -1,14 +1,14 @@
-import "reflect-metadata";
-import { DataSource } from "typeorm";
+import { Client } from "pg";
 
-export const AppDataSource = new DataSource({
-  type: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "root",
-  password: "password",
-  database: "myDB",
-
-  entities: [`${__dirname}/**/entities/*.{ts,js}`],
-  migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
+const URI = `postgresql://user:password@postgres:5432`;
+const client = new Client({
+  connectionString: URI,
 });
+const postgreConnection = () => {
+  client
+    .connect()
+    .then(() => console.log("connected to  postgres db..."))
+    .catch((err) => console.log("failed to connect to postgres db: ", err));
+};
+
+export default postgreConnection;

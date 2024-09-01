@@ -1,12 +1,14 @@
 import express, { Request, Response } from "express";
 import "reflect-metadata";
-import { AppDataSource } from "./database-connection/postgres-config";
+import postgreConnection from "./database-connection/postgres-config";
+
 // import mongoConnection from "./database-connection/mongo-config";
 
 const PORT: number = 4000;
 const app = express();
 
 // mongoConnection();
+postgreConnection();
 
 app.get("/", (req: Request, res: Response) => {
   res.send("<h1>hello last test one from ziad s</h1>");

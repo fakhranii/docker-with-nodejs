@@ -214,6 +214,8 @@
 
 - **When i had different `docker-compose` files and `mainComposeFile` like `docker-compose.yml` and i wanna run specific file and the main docker-compose : `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up`.**
 
+- **After adding any new image you have to build the new image before create any container.**
+
 ### _Common Docker Compose Commands_
 
 - **`docker compose up`: Build, (re)create, start, and attach to containers for a service.**
