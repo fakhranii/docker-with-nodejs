@@ -212,7 +212,7 @@
 
 - **Ensure you don't forget to add this line `docker-compose*` in `.dockerignore` to avoid all `docker-compose` files to be included in the containers that we gonna create.**
 
-- **When i had different `docker-compose` files and `mainComposeFile` like `docker-compose.yml` and i wanna run specific file and the main docker-compose : `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up`.**
+- **When i had different `docker-compose` files and `mainComposeFile` like `docker-compose.yml` and i wanna run specific file and the main docker-compose : `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up` and if you want it build again the command will be `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d`.**
 
 - **After adding any new image you have to build the new image before create any container.**
 
